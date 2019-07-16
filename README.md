@@ -1,6 +1,6 @@
 # Learning_management
 This is a short demo project I have built in python to demonstrate the working principle of Learning management system.
-There is no UI I have created it is completely command line based project. I am trying to improve in it to make it realistic once it will completed will try to deploy with UI for real use.
+There is no UI I have created. It is completely command line based project. I am trying to improve in it to make it realistic once it will completed will try to deploy with UI for real use.
 
 # Instruction to Run
 1. Install python3
