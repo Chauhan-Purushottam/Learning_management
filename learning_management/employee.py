@@ -1,6 +1,6 @@
 import database
 import sqlite3
-import Course_available
+from course_available import Course
 
 
 class Employee():
@@ -9,9 +9,9 @@ class Employee():
         self.user_name = name
         self.user_id = user_id
         self.user_pass = password
-        self.conn = database.database.connection()
+        self.conn = database.Database.connection()
         self.isLogin = False
-        self.course = Course_available.course()
+        self.course = Course()
 
     def employee_register(self):
         cursor = self.conn.cursor()
