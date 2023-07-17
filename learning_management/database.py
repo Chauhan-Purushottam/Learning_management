@@ -1,7 +1,7 @@
 import sqlite3
 
 
-class database:
+class Database:
 
     @staticmethod
     def connection():

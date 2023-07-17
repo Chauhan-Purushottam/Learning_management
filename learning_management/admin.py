@@ -1,6 +1,6 @@
 import database
-import Course_available
-import Employee
+from course_available import Course
+from employee import Employee
 import sqlite3
 
 
@@ -10,16 +10,16 @@ class Admin:
         self.user_name = admin_name
         self.user_id = admin_id
         self.user_pass = admin_pass
-        self.conn = database.database.connection()
+        self.conn = database.Database.connection()
         self.employee = None
-        self.course = Course_available.course()
+        self.course = Course()
         pass
 
     def get_employee_details(self):
-        self.emp_name = input("Enter your name ")
-        self.emp_id = input("Enter your ID ")
-        self.emp_pass = input("Enter your password ")
-        self.employee = Employee.Employee(self.emp_id, self.emp_pass, self.emp_name)
+        emp_name = input("Enter your name ")
+        emp_id = input("Enter your ID ")
+        emp_pass = input("Enter your password ")
+        self.employee = Employee(emp_id, emp_pass, emp_name)
 
     def admin_register(self):
         cursor = self.conn.cursor()
@@ -69,7 +69,7 @@ class Admin:
             self.conn.commit()
             cursor.close()
 
-    def more_action_for_admin(self,login):
+    def more_action_for_admin(self, login):
         if login:
             print("What do you want Now\n\n 1. Add Course\t 2. Have a look on available courses\t 3. Add trainee "
                   "\t 4. Assign course\n\n 5. Have a look on trainee details\t 6.Track_Training_record \t 7.Exit"
@@ -127,4 +127,3 @@ class Admin:
             print("No Record Found")
         finally:
             cursor.close()
-

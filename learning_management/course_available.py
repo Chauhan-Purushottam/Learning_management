@@ -4,10 +4,10 @@ import math
 from datetime import date, timedelta
 
 
-class course:
+class Course:
 
     def __init__(self):
-        self.conn = database.database.connection()
+        self.conn = database.Database.connection()
 
     def add_courses(self):
         course_name = input("Enter name of the course")
